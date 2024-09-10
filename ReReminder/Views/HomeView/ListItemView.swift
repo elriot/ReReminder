@@ -14,10 +14,10 @@ struct ListItemView: View {
             HStack(alignment: .top, spacing: 10) {
                 Text(item.title)
                 Spacer()
-                Text(item.description)
+                Text(item.dDay)
             }
             HStack {
-                Text("Last done : \(item.lastdate)")
+                Text("Last done : \(item.lastdate.formattedDate())")
                     .font(.caption)
             }
         }

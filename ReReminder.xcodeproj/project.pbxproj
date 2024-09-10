@@ -19,6 +19,7 @@
 		F6D87C922C90B598001C66BA /* ListItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6D87C912C90B598001C66BA /* ListItemView.swift */; };
 		F6D87C942C90B715001C66BA /* ReminderItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6D87C932C90B715001C66BA /* ReminderItem.swift */; };
 		F6D87C962C90B7DE001C66BA /* Term.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6D87C952C90B7DE001C66BA /* Term.swift */; };
+		F6D87C982C90CA10001C66BA /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6D87C972C90CA10001C66BA /* Extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,6 +55,7 @@
 		F6D87C912C90B598001C66BA /* ListItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListItemView.swift; sourceTree = "<group>"; };
 		F6D87C932C90B715001C66BA /* ReminderItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReminderItem.swift; sourceTree = "<group>"; };
 		F6D87C952C90B7DE001C66BA /* Term.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Term.swift; sourceTree = "<group>"; };
+		F6D87C972C90CA10001C66BA /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -144,6 +146,7 @@
 			isa = PBXGroup;
 			children = (
 				F6D87C5D2C900C8A001C66BA /* ContentView.swift */,
+				F6D87C972C90CA10001C66BA /* Extensions.swift */,
 			);
 			path = App;
 			sourceTree = "<group>";
@@ -315,6 +318,7 @@
 				F6D87C8F2C90B30B001C66BA /* ListView.swift in Sources */,
 				F6D87C922C90B598001C66BA /* ListItemView.swift in Sources */,
 				F6D87C8D2C90A21B001C66BA /* HomeView.swift in Sources */,
+				F6D87C982C90CA10001C66BA /* Extensions.swift in Sources */,
 				F6D87C5E2C900C8A001C66BA /* ContentView.swift in Sources */,
 				F6D87C962C90B7DE001C66BA /* Term.swift in Sources */,
 				F6D87C942C90B715001C66BA /* ReminderItem.swift in Sources */,
