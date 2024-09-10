@@ -11,5 +11,5 @@ struct ReminderItem: Hashable {
     let title: String
     let dDay: String
     let lastdate: Date
-    let term: String
+    let term: Term
 }
