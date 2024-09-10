@@ -15,6 +15,7 @@
 		F6D87C772C900C8B001C66BA /* ReReminderUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6D87C762C900C8B001C66BA /* ReReminderUITests.swift */; };
 		F6D87C792C900C8B001C66BA /* ReReminderUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6D87C782C900C8B001C66BA /* ReReminderUITestsLaunchTests.swift */; };
 		F6D87C8D2C90A21B001C66BA /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6D87C8C2C90A21B001C66BA /* HomeView.swift */; };
+		F6D87C8F2C90B30B001C66BA /* ListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6D87C8E2C90B30B001C66BA /* ListView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,6 +47,7 @@
 		F6D87C762C900C8B001C66BA /* ReReminderUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReReminderUITests.swift; sourceTree = "<group>"; };
 		F6D87C782C900C8B001C66BA /* ReReminderUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReReminderUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		F6D87C8C2C90A21B001C66BA /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		F6D87C8E2C90B30B001C66BA /* ListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -166,6 +168,7 @@
 			isa = PBXGroup;
 			children = (
 				F6D87C8C2C90A21B001C66BA /* HomeView.swift */,
+				F6D87C8E2C90B30B001C66BA /* ListView.swift */,
 			);
 			path = HomeView;
 			sourceTree = "<group>";
@@ -300,6 +303,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F6D87C8F2C90B30B001C66BA /* ListView.swift in Sources */,
 				F6D87C8D2C90A21B001C66BA /* HomeView.swift in Sources */,
 				F6D87C5E2C900C8A001C66BA /* ContentView.swift in Sources */,
 				F6D87C5C2C900C8A001C66BA /* ReReminderApp.swift in Sources */,
