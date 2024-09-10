@@ -13,7 +13,6 @@ struct HomeView: View {
             VStack {
                 Text("sdfss");
                 ListView();
-                Spacer()
             }
             .navigationTitle("My Home")
         }

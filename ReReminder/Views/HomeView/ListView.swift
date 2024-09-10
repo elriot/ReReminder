@@ -8,25 +8,24 @@
 import SwiftUI
 
 struct ListView: View {
-    let title: String, dDay: String, lastdate: String
+//    var listItem: [[]]
     var body: some View {
         List {
-            VStack(alignment:.leading, spacing: 10){
-                HStack(alignment: .top, spacing: 10) {
-                    Text(title)
-                    Spacer()
-                    Text(dDay)
-                }
-                HStack {
-                    Text("Last done : \(lastdate)")
-                        .font(.caption)
-                }
-            }
-            .frame(height: 60)
+            ListViewItem(title: "Replace Brita Filter", dDay: "D-15", lastdate: "2024. 09. 30")
+            ListViewItem(title: "Replace Brita Filter", dDay: "D-15", lastdate: "2024. 09. 30")
+            ListViewItem(title: "Replace Brita Filter", dDay: "D-15", lastdate: "2024. 09. 30")
+            ListViewItem(title: "Replace Brita Filter", dDay: "D-15", lastdate: "2024. 09. 30")
+            ListViewItem(title: "Replace Brita Filter", dDay: "D-15", lastdate: "2024. 09. 30")
         }
+//        .onDelete(perform: { indexSet in
+//            for i in indexSet {
+//                locationVM.deleteLocation(location: locations[i])
+//            }
+////                print("delete \(indexSet)")
+//        })
     }
 }
 
 #Preview {
-    ListView(title: "Replace Brita Filter", dDay: "D-15", lastdate: "2024. 09. 30")
+    ListView()
 }
