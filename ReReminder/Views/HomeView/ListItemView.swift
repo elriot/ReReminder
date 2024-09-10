@@ -16,9 +16,8 @@ struct ListItemView: View {
         HStack {
             VStack(alignment:.leading, spacing: 10){
                 HStack(alignment: .top, spacing: 10) {
-                    Text(item.title)
+                    Text("\(item.title) (\(item.dDay))")
                     Spacer()
-                    Text(item.dDay)
                 }
                 HStack {
                     Text("Last done : \(item.lastdate.formattedDate())")
@@ -36,6 +35,7 @@ struct ListItemView: View {
             .frame(width: 80)
         }
         .frame(height: 60)
+        
     }
 }
 

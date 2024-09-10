@@ -15,16 +15,5 @@ struct ReminderItem: Hashable, Identifiable {
     var term: Term
     var description: String
     var valid: Bool
-    
-    static func getReminderSample() -> ReminderItem {
-        return ReminderItem(
-            id: UUID(),
-            title: "Replace Brita Filter",
-            dDay: "D-15",
-            lastdate: Date(),
-            term: .monthly,
-            description: "Filter replacement reminder",
-            valid: true
-        )
-    }
+
 }
