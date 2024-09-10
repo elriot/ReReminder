@@ -14,6 +14,7 @@
 		F6D87C6D2C900C8B001C66BA /* ReReminderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6D87C6C2C900C8B001C66BA /* ReReminderTests.swift */; };
 		F6D87C772C900C8B001C66BA /* ReReminderUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6D87C762C900C8B001C66BA /* ReReminderUITests.swift */; };
 		F6D87C792C900C8B001C66BA /* ReReminderUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6D87C782C900C8B001C66BA /* ReReminderUITestsLaunchTests.swift */; };
+		F6D87C8D2C90A21B001C66BA /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6D87C8C2C90A21B001C66BA /* HomeView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +45,7 @@
 		F6D87C722C900C8B001C66BA /* ReReminderUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ReReminderUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F6D87C762C900C8B001C66BA /* ReReminderUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReReminderUITests.swift; sourceTree = "<group>"; };
 		F6D87C782C900C8B001C66BA /* ReReminderUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReReminderUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		F6D87C8C2C90A21B001C66BA /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,10 +96,13 @@
 		F6D87C5A2C900C8A001C66BA /* ReReminder */ = {
 			isa = PBXGroup;
 			children = (
-				F6D87C5B2C900C8A001C66BA /* ReReminderApp.swift */,
-				F6D87C5D2C900C8A001C66BA /* ContentView.swift */,
 				F6D87C5F2C900C8B001C66BA /* Assets.xcassets */,
+				F6D87C5B2C900C8A001C66BA /* ReReminderApp.swift */,
 				F6D87C612C900C8B001C66BA /* Preview Content */,
+				F6D87C852C90A15D001C66BA /* App */,
+				F6D87C862C90A168001C66BA /* Models */,
+				F6D87C872C90A16E001C66BA /* Views */,
+				F6D87C882C90A172001C66BA /* ViewModels */,
 			);
 			path = ReReminder;
 			sourceTree = "<group>";
@@ -125,6 +130,44 @@
 				F6D87C782C900C8B001C66BA /* ReReminderUITestsLaunchTests.swift */,
 			);
 			path = ReReminderUITests;
+			sourceTree = "<group>";
+		};
+		F6D87C852C90A15D001C66BA /* App */ = {
+			isa = PBXGroup;
+			children = (
+				F6D87C5D2C900C8A001C66BA /* ContentView.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		F6D87C862C90A168001C66BA /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		F6D87C872C90A16E001C66BA /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				F6D87C892C90A1FD001C66BA /* HomeView */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		F6D87C882C90A172001C66BA /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		F6D87C892C90A1FD001C66BA /* HomeView */ = {
+			isa = PBXGroup;
+			children = (
+				F6D87C8C2C90A21B001C66BA /* HomeView.swift */,
+			);
+			path = HomeView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -257,6 +300,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F6D87C8D2C90A21B001C66BA /* HomeView.swift in Sources */,
 				F6D87C5E2C900C8A001C66BA /* ContentView.swift in Sources */,
 				F6D87C5C2C900C8A001C66BA /* ReReminderApp.swift in Sources */,
 			);
