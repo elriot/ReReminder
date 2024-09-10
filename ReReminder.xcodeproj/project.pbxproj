@@ -17,6 +17,8 @@
 		F6D87C8D2C90A21B001C66BA /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6D87C8C2C90A21B001C66BA /* HomeView.swift */; };
 		F6D87C8F2C90B30B001C66BA /* ListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6D87C8E2C90B30B001C66BA /* ListView.swift */; };
 		F6D87C922C90B598001C66BA /* ListViewItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6D87C912C90B598001C66BA /* ListViewItem.swift */; };
+		F6D87C942C90B715001C66BA /* ReminderItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6D87C932C90B715001C66BA /* ReminderItem.swift */; };
+		F6D87C962C90B7DE001C66BA /* Term.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6D87C952C90B7DE001C66BA /* Term.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,6 +52,8 @@
 		F6D87C8C2C90A21B001C66BA /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		F6D87C8E2C90B30B001C66BA /* ListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListView.swift; sourceTree = "<group>"; };
 		F6D87C912C90B598001C66BA /* ListViewItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewItem.swift; sourceTree = "<group>"; };
+		F6D87C932C90B715001C66BA /* ReminderItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReminderItem.swift; sourceTree = "<group>"; };
+		F6D87C952C90B7DE001C66BA /* Term.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Term.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -147,6 +151,8 @@
 		F6D87C862C90A168001C66BA /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				F6D87C932C90B715001C66BA /* ReminderItem.swift */,
+				F6D87C952C90B7DE001C66BA /* Term.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -310,6 +316,8 @@
 				F6D87C922C90B598001C66BA /* ListViewItem.swift in Sources */,
 				F6D87C8D2C90A21B001C66BA /* HomeView.swift in Sources */,
 				F6D87C5E2C900C8A001C66BA /* ContentView.swift in Sources */,
+				F6D87C962C90B7DE001C66BA /* Term.swift in Sources */,
+				F6D87C942C90B715001C66BA /* ReminderItem.swift in Sources */,
 				F6D87C5C2C900C8A001C66BA /* ReReminderApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
