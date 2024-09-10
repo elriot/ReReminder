@@ -9,9 +9,10 @@ import Foundation
 
 struct ReminderItem: Hashable, Identifiable {
     var id: UUID
-    let title: String
-    let dDay: String
-    let lastdate: Date
-    let term: Term
-    let description: String
+    var title: String
+    var dDay: String
+    var lastdate: Date
+    var term: Term
+    var description: String
+    var valid: Bool
 }

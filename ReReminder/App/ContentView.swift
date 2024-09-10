@@ -8,10 +8,12 @@
 import SwiftUI
 
 struct ContentView: View {
+    @StateObject private var vm = ReminderVM()
     var body: some View {
         NavigationView {
             VStack {
                 HomeView()
+                    .environmentObject(vm)
                 Spacer()
             }
             .navigationBarTitleDisplayMode(.inline)
@@ -38,7 +40,7 @@ struct ContentView: View {
                 })
             }
         }
-
+        
     }
 }
 
