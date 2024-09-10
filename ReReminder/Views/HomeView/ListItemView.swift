@@ -7,17 +7,17 @@
 
 import SwiftUI
 
-struct ListViewItem: View {
-    let title: String, dDay: String, lastdate: String
+struct ListItemView: View {
+    @Binding var item: ReminderItem
     var body: some View {
         VStack(alignment:.leading, spacing: 10){
             HStack(alignment: .top, spacing: 10) {
-                Text(title)
+                Text(item.title)
                 Spacer()
-                Text(dDay)
+                Text(item.description)
             }
             HStack {
-                Text("Last done : \(lastdate)")
+                Text("Last done : \(item.lastdate)")
                     .font(.caption)
             }
         }
@@ -26,5 +26,5 @@ struct ListViewItem: View {
 }
 
 #Preview {
-    ListViewItem(title: "Replace Brita Filter", dDay: "D-15", lastdate: "2024. 09. 30")
+    ListItemView(item : .constant(ReminderItem(id: UUID(), title: "Replace Brita Filter", dDay: "D-15", lastdate: Date(), term: .monthly, description: "filter replacement")))
 }

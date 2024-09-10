@@ -16,7 +16,7 @@
 		F6D87C792C900C8B001C66BA /* ReReminderUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6D87C782C900C8B001C66BA /* ReReminderUITestsLaunchTests.swift */; };
 		F6D87C8D2C90A21B001C66BA /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6D87C8C2C90A21B001C66BA /* HomeView.swift */; };
 		F6D87C8F2C90B30B001C66BA /* ListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6D87C8E2C90B30B001C66BA /* ListView.swift */; };
-		F6D87C922C90B598001C66BA /* ListViewItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6D87C912C90B598001C66BA /* ListViewItem.swift */; };
+		F6D87C922C90B598001C66BA /* ListItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6D87C912C90B598001C66BA /* ListItemView.swift */; };
 		F6D87C942C90B715001C66BA /* ReminderItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6D87C932C90B715001C66BA /* ReminderItem.swift */; };
 		F6D87C962C90B7DE001C66BA /* Term.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6D87C952C90B7DE001C66BA /* Term.swift */; };
 /* End PBXBuildFile section */
@@ -51,7 +51,7 @@
 		F6D87C782C900C8B001C66BA /* ReReminderUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReReminderUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		F6D87C8C2C90A21B001C66BA /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		F6D87C8E2C90B30B001C66BA /* ListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListView.swift; sourceTree = "<group>"; };
-		F6D87C912C90B598001C66BA /* ListViewItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewItem.swift; sourceTree = "<group>"; };
+		F6D87C912C90B598001C66BA /* ListItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListItemView.swift; sourceTree = "<group>"; };
 		F6D87C932C90B715001C66BA /* ReminderItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReminderItem.swift; sourceTree = "<group>"; };
 		F6D87C952C90B7DE001C66BA /* Term.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Term.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -177,7 +177,7 @@
 			children = (
 				F6D87C8C2C90A21B001C66BA /* HomeView.swift */,
 				F6D87C8E2C90B30B001C66BA /* ListView.swift */,
-				F6D87C912C90B598001C66BA /* ListViewItem.swift */,
+				F6D87C912C90B598001C66BA /* ListItemView.swift */,
 			);
 			path = HomeView;
 			sourceTree = "<group>";
@@ -313,7 +313,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F6D87C8F2C90B30B001C66BA /* ListView.swift in Sources */,
-				F6D87C922C90B598001C66BA /* ListViewItem.swift in Sources */,
+				F6D87C922C90B598001C66BA /* ListItemView.swift in Sources */,
 				F6D87C8D2C90A21B001C66BA /* HomeView.swift in Sources */,
 				F6D87C5E2C900C8A001C66BA /* ContentView.swift in Sources */,
 				F6D87C962C90B7DE001C66BA /* Term.swift in Sources */,

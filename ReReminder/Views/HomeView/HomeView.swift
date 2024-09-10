@@ -8,11 +8,18 @@
 import SwiftUI
 
 struct HomeView: View {
+    @State var items: [ReminderItem] = [
+        ReminderItem(id: UUID(), title: "Replace Brita Filter", dDay: "D-15", lastdate: Date(), term: .monthly, description: "filter replacement"),
+        ReminderItem(id: UUID(), title: "Replace Brita Filter", dDay: "D-15", lastdate: Date(), term: .monthly, description: "filter replacement"),
+        ReminderItem(id: UUID(), title: "Replace Brita Filter", dDay: "D-15", lastdate: Date(), term: .monthly, description: "filter replacement"),
+        ReminderItem(id: UUID(), title: "Replace Brita Filter", dDay: "D-15", lastdate: Date(), term: .monthly, description: "filter replacement")
+    ]
+    
     var body: some View {
         NavigationView {
             VStack {
                 Text("sdfss");
-                ListView();
+                ListView(items: $items);
             }
             .navigationTitle("My Home")
         }
