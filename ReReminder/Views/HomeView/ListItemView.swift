@@ -27,10 +27,9 @@ struct ListItemView: View {
             }
             
             Toggle(isOn: $item.valid) {
-                Text("") // Toggle 라벨 제공
-            }
-            .onChange(of: item.valid) { newValue in
-                vm.toggleValid(item: &item) // Toggle 값 변경 시 함수 호출
+                Text("")            }
+            .onChange(of: item.valid) {
+                vm.toggleValid(item: &item)
             }
             .labelsHidden()
             .padding()
@@ -41,5 +40,5 @@ struct ListItemView: View {
 }
 
 #Preview(traits: .sizeThatFitsLayout) {
-    ListItemView(item : .constant(ReminderItem(id: UUID(), title: "Replace Brita Filter", dDay: "D-15", lastdate: Date(), term: .monthly, description: "filter replacement", valid: true)))
+    ListItemView(item : .constant(ReminderVM().getReminderSample()))
 }
