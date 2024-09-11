@@ -8,24 +8,31 @@
 import SwiftUI
 
 struct HomeView: View {
-    @State var items: [ReminderItem] = [
-        ReminderItem(id: UUID(), title: "Replace Brita Filter", dDay: "D-15", lastdate: Date() - 100, term: .monthly, description: "filter replacement", valid: true),
-        ReminderItem(id: UUID(), title: "Replace Brita Filter", dDay: "D-15", lastdate: Date() - 50, term: .monthly, description: "filter replacement", valid: true),
-        ReminderItem(id: UUID(), title: "Replace Brita Filter", dDay: "D-15", lastdate: Date() - 20, term: .monthly, description: "filter replacement", valid: false),
-        ReminderItem(id: UUID(), title: "Replace Brita Filter", dDay: "D-15", lastdate: Date() - 5000, term: .monthly, description: "filter replacement", valid: true)
-    ]
+    @EnvironmentObject var vm: ReminderVM
+    @State var items: [ReminderItem] = []
+    @State var text: String = ""
+    
+    func submit() {
+        print("search : \(text)")
+    }
     
     var body: some View {
         NavigationView {
             VStack {
-                Text("sdfss");
+                SearchTextField(placeholder: "Search title..", action: submit, text: $text)
+                    .padding()
+                
                 ListView(items: $items);
             }
             .navigationTitle("My Home")
+        }
+        .onAppear {
+            items = vm.getReminderSampleList()
         }
     }
 }
 
 #Preview {
     HomeView()
+        .environmentObject(ReminderVM())
 }
