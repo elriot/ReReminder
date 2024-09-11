@@ -22,38 +22,47 @@ struct HomeView: View {
             ReminderMainView()
                 .navigationTitle("Home")
                 .toolbar {
-                    ToolbarItem(placement: .navigationBarLeading) { // Correct placement
-                        Button {
-                            path.append(.add)
-                        } label: {
-                            Image(systemName: "plus")
-                                .foregroundColor(.toolBarButton)
-                        }
-                    }
-                    ToolbarItem(placement: .topBarTrailing, content: {
-                        Button {
-                            
-                        } label: {
-                            Image(systemName: "gearshape")
-                                .foregroundColor(.toolBarButton)
-                        }
-                    })
+                    addToolbarItems()
                 }
                 .navigationBarTitleDisplayMode(.inline)
                 .navigationDestination(for: NavPath.self) { path in
-                    switch path {
-                    case .main:
-                        ReminderMainView()
-                    case .setting:
-                        ReminderMainView()
-                    case .add:
-                        ReminderMainView()
-                    case .details(let item):
-                        ReminderMainView()
-                    }
+                   destinationView(for: path)
                 }
         }
-
+    }
+    
+    @ToolbarContentBuilder
+    private func addToolbarItems() -> some ToolbarContent {
+        ToolbarItem(placement: .navigationBarLeading) {
+            Button {
+                path.append(.add)
+            } label: {
+                Image(systemName: "plus")
+                    .foregroundColor(.toolBarButton)
+            }
+        }
+        ToolbarItem(placement: .navigationBarTrailing) {
+            Button {
+                path.append(.setting)
+            } label: {
+                Image(systemName: "gearshape")
+                    .foregroundColor(.toolBarButton)
+            }
+        }
+    }
+    
+    @ViewBuilder
+    func destinationView(for path: NavPath) -> some View {
+        switch path {
+        case .main:
+            ReminderMainView()
+        case .setting:
+            ReminderMainView()
+        case .add:
+            ReminderMainView()
+        case .details(let item):
+            ReminderMainView()
+        }
     }
 }
 
