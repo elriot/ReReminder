@@ -20,17 +20,38 @@ struct HomeView: View {
     var body: some View {
         NavigationStack(path: $path){
             ReminderMainView()
-        }
-        .navigationTitle("My Home")
-        .navigationDestination(for: NavPath.self) { path in
-//            switch path {
-//            case .add:
-////                    NewItemView(path: $path)
-//            case .details(let item):
-////                    ItemDetailsView(item: item, path: $path)
-//            case .userInfo:
-////                    UserViewInfo(path: $path)
-//            }
+                .navigationTitle("Home")
+                .toolbar {
+                    ToolbarItem(placement: .navigationBarLeading) { // Correct placement
+                        Button {
+                            path.append(.add)
+                        } label: {
+                            Image(systemName: "plus")
+                                .foregroundColor(.toolBarButton)
+                        }
+                    }
+                    ToolbarItem(placement: .topBarTrailing, content: {
+                        Button {
+                            
+                        } label: {
+                            Image(systemName: "gearshape")
+                                .foregroundColor(.toolBarButton)
+                        }
+                    })
+                }
+                .navigationBarTitleDisplayMode(.inline)
+                .navigationDestination(for: NavPath.self) { path in
+                    switch path {
+                    case .main:
+                        ReminderMainView()
+                    case .setting:
+                        ReminderMainView()
+                    case .add:
+                        ReminderMainView()
+                    case .details(let item):
+                        ReminderMainView()
+                    }
+                }
         }
 
     }

@@ -17,15 +17,13 @@ struct ReminderMainView: View {
     }
     
     var body: some View {
-        NavigationView {
-            VStack {
-                SearchTextField(placeholder: "Search title..", action: submit, text: $text)
-                    .padding()
-                
-                ListView(items: $items);
-            }
-            .navigationTitle("My Home")
+        VStack {
+            SearchTextField(placeholder: "Search title..", action: submit, text: $text)
+                .padding()
+            
+            ListView(items: $items);
         }
+        
         .onAppear {
             items = vm.getReminderSampleList()
         }
