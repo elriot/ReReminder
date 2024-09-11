@@ -22,6 +22,8 @@
 		F6D87C982C90CA10001C66BA /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6D87C972C90CA10001C66BA /* Extensions.swift */; };
 		F6D87C9A2C90D95D001C66BA /* ReminderVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6D87C992C90D95D001C66BA /* ReminderVM.swift */; };
 		F6E0AE012C924B50005E6BCB /* SearchTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6E0AE002C924B4F005E6BCB /* SearchTextField.swift */; };
+		F6E0AE032C925036005E6BCB /* NavPath.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6E0AE022C925036005E6BCB /* NavPath.swift */; };
+		F6E0AE052C925239005E6BCB /* ReminderMainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6E0AE042C925239005E6BCB /* ReminderMainView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -60,6 +62,8 @@
 		F6D87C972C90CA10001C66BA /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		F6D87C992C90D95D001C66BA /* ReminderVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReminderVM.swift; sourceTree = "<group>"; };
 		F6E0AE002C924B4F005E6BCB /* SearchTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTextField.swift; sourceTree = "<group>"; };
+		F6E0AE022C925036005E6BCB /* NavPath.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavPath.swift; sourceTree = "<group>"; };
+		F6E0AE042C925239005E6BCB /* ReminderMainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReminderMainView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -176,6 +180,7 @@
 			isa = PBXGroup;
 			children = (
 				F6D87C992C90D95D001C66BA /* ReminderVM.swift */,
+				F6E0AE022C925036005E6BCB /* NavPath.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -184,6 +189,7 @@
 			isa = PBXGroup;
 			children = (
 				F6D87C8C2C90A21B001C66BA /* HomeView.swift */,
+				F6E0AE042C925239005E6BCB /* ReminderMainView.swift */,
 				F6D87C8E2C90B30B001C66BA /* ListView.swift */,
 				F6D87C912C90B598001C66BA /* ListItemView.swift */,
 				F6E0AE002C924B4F005E6BCB /* SearchTextField.swift */,
@@ -321,12 +327,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F6E0AE032C925036005E6BCB /* NavPath.swift in Sources */,
 				F6D87C8F2C90B30B001C66BA /* ListView.swift in Sources */,
 				F6D87C922C90B598001C66BA /* ListItemView.swift in Sources */,
 				F6D87C8D2C90A21B001C66BA /* HomeView.swift in Sources */,
 				F6D87C982C90CA10001C66BA /* Extensions.swift in Sources */,
 				F6E0AE012C924B50005E6BCB /* SearchTextField.swift in Sources */,
 				F6D87C5E2C900C8A001C66BA /* ContentView.swift in Sources */,
+				F6E0AE052C925239005E6BCB /* ReminderMainView.swift in Sources */,
 				F6D87C9A2C90D95D001C66BA /* ReminderVM.swift in Sources */,
 				F6D87C962C90B7DE001C66BA /* Term.swift in Sources */,
 				F6D87C942C90B715001C66BA /* ReminderItem.swift in Sources */,

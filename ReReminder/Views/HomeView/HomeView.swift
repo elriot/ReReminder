@@ -11,23 +11,57 @@ struct HomeView: View {
     @EnvironmentObject var vm: ReminderVM
     @State var items: [ReminderItem] = []
     @State var text: String = ""
+    @State private var path: [NavPath] = []
     
     func submit() {
         print("search : \(text)")
     }
     
     var body: some View {
-        NavigationView {
-            VStack {
-                SearchTextField(placeholder: "Search title..", action: submit, text: $text)
-                    .padding()
-                
-                ListView(items: $items);
-            }
-            .navigationTitle("My Home")
+        NavigationStack(path: $path){
+            ReminderMainView()
+                .navigationTitle("Home")
+                .toolbar {
+                    addToolbarItems()
+                }
+                .navigationBarTitleDisplayMode(.inline)
+                .navigationDestination(for: NavPath.self) { path in
+                   destinationView(for: path)
+                }
         }
-        .onAppear {
-            items = vm.getReminderSampleList()
+    }
+    
+    @ToolbarContentBuilder
+    private func addToolbarItems() -> some ToolbarContent {
+        ToolbarItem(placement: .navigationBarLeading) {
+            Button {
+                path.append(.add)
+            } label: {
+                Image(systemName: "plus")
+                    .foregroundColor(.toolBarButton)
+            }
+        }
+        ToolbarItem(placement: .navigationBarTrailing) {
+            Button {
+                path.append(.setting)
+            } label: {
+                Image(systemName: "gearshape")
+                    .foregroundColor(.toolBarButton)
+            }
+        }
+    }
+    
+    @ViewBuilder
+    func destinationView(for path: NavPath) -> some View {
+        switch path {
+        case .main:
+            ReminderMainView()
+        case .setting:
+            ReminderMainView()
+        case .add:
+            ReminderMainView()
+        case .details(let item):
+            ReminderMainView()
         }
     }
 }
