@@ -11,24 +11,28 @@ struct HomeView: View {
     @EnvironmentObject var vm: ReminderVM
     @State var items: [ReminderItem] = []
     @State var text: String = ""
+    @State private var path: [NavPath] = []
     
     func submit() {
         print("search : \(text)")
     }
     
     var body: some View {
-        NavigationView {
-            VStack {
-                SearchTextField(placeholder: "Search title..", action: submit, text: $text)
-                    .padding()
-                
-                ListView(items: $items);
-            }
-            .navigationTitle("My Home")
+        NavigationStack(path: $path){
+            ReminderMainView()
         }
-        .onAppear {
-            items = vm.getReminderSampleList()
+        .navigationTitle("My Home")
+        .navigationDestination(for: NavPath.self) { path in
+//            switch path {
+//            case .add:
+////                    NewItemView(path: $path)
+//            case .details(let item):
+////                    ItemDetailsView(item: item, path: $path)
+//            case .userInfo:
+////                    UserViewInfo(path: $path)
+//            }
         }
+
     }
 }
 
