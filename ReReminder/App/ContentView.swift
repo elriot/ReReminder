@@ -8,14 +8,39 @@
 import SwiftUI
 
 struct ContentView: View {
+    @StateObject private var vm = ReminderVM()
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
+        NavigationView {
+            VStack {
+                HomeView()
+                    .environmentObject(vm)
+                Spacer()
+            }
+            .navigationBarTitleDisplayMode(.inline)
+            .toolbar {
+                ToolbarItem(placement: .topBarLeading, content: {
+                    Button {
+                        //                        showLogout = true
+                        //                    path.append(.userInfo)
+                    } label: {
+                        Image(systemName: "plus")
+                            .foregroundColor(.toolBarButton)
+                    }
+                })
+            }
+            .toolbar {
+                ToolbarItem(placement: .topBarTrailing, content: {
+                    Button {
+                        //                        showLogout = true
+                        //                    path.append(.userInfo)
+                    } label: {
+                        Image(systemName: "gearshape")
+                            .foregroundColor(.toolBarButton)
+                    }
+                })
+            }
         }
-        .padding()
+        
     }
 }
 
