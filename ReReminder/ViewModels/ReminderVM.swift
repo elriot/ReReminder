@@ -25,6 +25,7 @@ final class ReminderVM: ObservableObject {
             ReminderItem(title: "Replace Eye drop", referenceDate: Date() - 45, term: .monthly, description: "eyedrop replacement"),
             ReminderItem(title: "Wash Bedding", referenceDate: Date() - 5, term: .weekly, description: "eyedrop replacement"),
             ReminderItem(title: "Pay electrocity", referenceDate: Date() - 76, term: .biMonthly, description: "eyedrop replacement"),
+            ReminderItem(title: "Pay electrocity", referenceDate: Date() - 76, term: .biMonthly, description: "eyedrop replacement", valid: false)
         ]
     }
     func getReminderSample() -> ReminderItem {
