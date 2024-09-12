@@ -9,6 +9,7 @@ import SwiftUI
 
 struct ReminderMainView: View {
     @EnvironmentObject var vm: ReminderVM
+    @Binding var items: [ReminderItem]
     @State var text: String = ""
     
     func submit() {
@@ -26,6 +27,6 @@ struct ReminderMainView: View {
 }
 
 #Preview {
-    ReminderMainView()
+    ReminderMainView(items: .constant([]))
         .environmentObject(ReminderVM())
 }
