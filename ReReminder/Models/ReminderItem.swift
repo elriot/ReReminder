@@ -11,9 +11,10 @@ struct ReminderItem: Hashable, Identifiable {
     var id: UUID
     var title: String
     var dDay: String
-    var lastdate: Date
+    var referenceDate: Date
+    var nextAlertDate: Date
     var term: Term
     var description: String
     var valid: Bool
-
+    
 }

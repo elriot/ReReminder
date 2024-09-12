@@ -38,7 +38,7 @@ struct ListItemView: View {
                 }
                 .fontWeight(.semibold)
                 HStack {
-                    Text("Last : \(item.lastdate.formattedDate())")
+                    Text("Last : \(item.nextAlertDate.formattedDate())")
                         .font(.caption)
                 }
             }

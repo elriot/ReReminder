@@ -54,6 +54,7 @@ struct AddItemView: View {
             
             VStack(alignment: .leading, spacing: spacing){
                 SimpleDatePicker(label:"Start Date",targetDate: $date)
+                    .datePickerStyle(.compact)
 //                SimpleTextField(placeholder: "Enter Description", text: $description)
             }
             
