@@ -12,6 +12,7 @@ struct AddItemView: View {
     @State var description: String = ""
     @State private var term: Term = .once
     @State var titleMissingAlertVisible: Bool = false
+    @State var date: Date = Date()
     private let spacing: CGFloat = 15
     
     func submit() {
@@ -49,6 +50,11 @@ struct AddItemView: View {
                 Text("Description")
                 
                 SimpleTextField(placeholder: "Enter Description", text: $description)
+            }
+            
+            VStack(alignment: .leading, spacing: spacing){
+                SimpleDatePicker(label:"Start Date",targetDate: $date)
+//                SimpleTextField(placeholder: "Enter Description", text: $description)
             }
             
             Spacer()

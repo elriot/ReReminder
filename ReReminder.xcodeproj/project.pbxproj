@@ -28,6 +28,7 @@
 		F6E0AE0A2C925EB7005E6BCB /* SimpleTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6E0AE092C925EB7005E6BCB /* SimpleTextField.swift */; };
 		F6E0AE0C2C926162005E6BCB /* TermPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6E0AE0B2C926162005E6BCB /* TermPickerView.swift */; };
 		F6E0AE0E2C926551005E6BCB /* SimpleWideButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6E0AE0D2C926551005E6BCB /* SimpleWideButton.swift */; };
+		F6E0AE102C9269C1005E6BCB /* SimpleDatePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6E0AE0F2C9269C1005E6BCB /* SimpleDatePicker.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -72,6 +73,7 @@
 		F6E0AE092C925EB7005E6BCB /* SimpleTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleTextField.swift; sourceTree = "<group>"; };
 		F6E0AE0B2C926162005E6BCB /* TermPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TermPickerView.swift; sourceTree = "<group>"; };
 		F6E0AE0D2C926551005E6BCB /* SimpleWideButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleWideButton.swift; sourceTree = "<group>"; };
+		F6E0AE0F2C9269C1005E6BCB /* SimpleDatePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleDatePicker.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -213,6 +215,7 @@
 				F6E0AE092C925EB7005E6BCB /* SimpleTextField.swift */,
 				F6E0AE0B2C926162005E6BCB /* TermPickerView.swift */,
 				F6E0AE0D2C926551005E6BCB /* SimpleWideButton.swift */,
+				F6E0AE0F2C9269C1005E6BCB /* SimpleDatePicker.swift */,
 			);
 			path = AddItemView;
 			sourceTree = "<group>";
@@ -352,6 +355,7 @@
 				F6D87C8F2C90B30B001C66BA /* ListView.swift in Sources */,
 				F6E0AE0C2C926162005E6BCB /* TermPickerView.swift in Sources */,
 				F6D87C922C90B598001C66BA /* ListItemView.swift in Sources */,
+				F6E0AE102C9269C1005E6BCB /* SimpleDatePicker.swift in Sources */,
 				F6D87C8D2C90A21B001C66BA /* HomeView.swift in Sources */,
 				F6E0AE0A2C925EB7005E6BCB /* SimpleTextField.swift in Sources */,
 				F6E0AE082C925D15005E6BCB /* AddItemView.swift in Sources */,
