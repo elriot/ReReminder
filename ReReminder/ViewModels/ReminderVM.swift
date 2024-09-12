@@ -27,7 +27,7 @@ final class ReminderVM: ObservableObject {
         var newItem = ReminderItem(title: title, referenceDate: referenceDate, term: term, description: description)
         updateNextAlertDate(for: &newItem)
         updateDDay(for: &newItem)
-        reminderItems.append(newItem)
+        appendAndSave(newItem)
     }
     
     func getReminderSampleList() -> [ReminderItem] {
@@ -133,6 +133,7 @@ final class ReminderVM: ObservableObject {
                 encoded.append(data)
             }
             defaults.set(encoded, forKey: "ReminderItems")
+            print("defauls set reminderItems done")
         } catch {
             print(error)
         }
@@ -152,6 +153,7 @@ final class ReminderVM: ObservableObject {
                     reminderItems.append(decodedData)
                 }
                 return reminderItems
+                print("defauls GET reminderItems done")
             } catch {
                 print(error)
                 return []
