@@ -18,13 +18,13 @@ final class ReminderVM: ObservableObject {
     }
     func getReminderSampleList() -> [ReminderItem] {
         return [
-            ReminderItem(id: UUID(), title: "Replace Brita Filter", dDay: "D-5", referenceDate: Date() - 35, nextAlertDate: Date() - 35, term: .monthly, description: "filter replacement", valid: true),
-            ReminderItem(id: UUID(), title: "Replace Eye drop", dDay: "D-15", referenceDate: Date() - 45, nextAlertDate: Date() - 45, term: .monthly, description: "filter replacement", valid: true),
-            ReminderItem(id: UUID(), title: "Replace Air conditioner filter", dDay: "D-20", referenceDate: Date() - 50, nextAlertDate: Date() - 35,term: .monthly, description: "filter replacement", valid: false),
-            ReminderItem(id: UUID(), title: "Wash bedding", dDay: "D-25", referenceDate: Date() - 55, nextAlertDate: Date() - 35,term: .monthly, description: "filter replacement", valid: false)
+            ReminderItem(title: "Replace Brita Filter", referenceDate: Date() - 35, term: .monthly, description: "filter replacement"),
+            ReminderItem(title: "Replace Eye drop", referenceDate: Date() - 45, term: .monthly, description: "eyedrop replacement"),
+            ReminderItem(title: "Wash Bedding", referenceDate: Date() - 5, term: .weekly, description: "eyedrop replacement"),
+            ReminderItem(title: "Pay electrocity", referenceDate: Date() - 76, term: .biMonthly, description: "eyedrop replacement"),
         ]
     }
     func getReminderSample() -> ReminderItem {
-        return ReminderItem(id: UUID(), title: "Replace Brita Filter", dDay: "D-15", referenceDate: Date(), nextAlertDate: Date(), term: .monthly, description: "filter replacement", valid: true)
+        return ReminderItem(title: "Replace Brita Filter", referenceDate: Date() - 35, term: .monthly, description: "filter replacement")
     }
 }
