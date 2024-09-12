@@ -12,7 +12,6 @@ struct ListView: View {
     var body: some View {
         List ($items){ $item in
             ListItemView(item: $item)
-//                .listRowBackground(item.valid ? Color.clear : Color.gray.opacity(0.5))
         }
         .padding(0)
 //        .onDelete {
