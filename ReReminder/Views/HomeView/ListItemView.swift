@@ -15,7 +15,7 @@ struct ListItemView: View {
         let bg: Color = item.valid ? .orange : .gray
         let fontColor: Color = item.valid ? .black : .gray
         
-        HStack(spacing: 10) {
+        HStack(spacing: 20) {
             ZStack {
                 RoundedRectangle(cornerRadius: 10)
                     .fill(bg)
@@ -52,16 +52,16 @@ struct ListItemView: View {
             
             .foregroundColor(fontColor)
             
-            VStack(alignment: .trailing, content: {
-                Toggle(isOn: $item.valid) {
-                    Text("")
-                }
-                .onChange(of: item.valid) {
-                    vm.toggleValid(item: &item)
-                }
-                .labelsHidden()
-                .padding()
-            })
+//            VStack(alignment: .trailing, content: {
+//                Toggle(isOn: $item.valid) {
+//                    Text("")
+//                }
+//                .onChange(of: item.valid) {
+//                    vm.toggleValid(item: &item)
+//                }
+//                .labelsHidden()
+//                .padding()
+//            })
         }
         .frame(height: 90)
         
