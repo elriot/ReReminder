@@ -29,9 +29,6 @@ struct HomeView: View {
                    destinationView(for: path)
                 }
         }
-        .onAppear {
-//            printYo()
-        }
     }
     func printYo() {
         print(vm.reminderItems)
@@ -65,7 +62,7 @@ struct HomeView: View {
         case .setting:
             ReminderMainView()
         case .add:
-            AddItemView()
+            AddItemView(path: $path)
         case .details(let item):
             ReminderMainView()
         }

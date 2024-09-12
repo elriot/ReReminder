@@ -6,7 +6,7 @@
 //
 
 import Foundation
-enum Term: String, CaseIterable, Identifiable {
+enum Term: String, CaseIterable, Identifiable, Codable {
     case once = "Once"
     case weekly = "Weekly"
     case biWeekly = "Bi-Weekly"

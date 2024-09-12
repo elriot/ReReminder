@@ -6,17 +6,28 @@
 //
 
 import Foundation
+import SwiftUI
 
 final class ReminderVM: ObservableObject {
     @Published var reminderItems: [ReminderItem] = []
+    private let defaults = UserDefaults.standard
     
     init(){
-        reminderItems = getReminderSampleList()
-        updateItems()
+//        reminderItems = getReminderSampleList()
+//        updateItems()
+        self.reminderItems = getReminderItems()
+        print("Init: reminderItem \(reminderItems)")
     }
     
     func toggleValid (item: inout ReminderItem) {
         item.valid.toggle()
+    }
+    
+    func addNewItem(title: String, referenceDate: Date, term: Term, description: String){
+        var newItem = ReminderItem(title: title, referenceDate: referenceDate, term: term, description: description)
+        updateNextAlertDate(for: &newItem)
+        updateDDay(for: &newItem)
+        reminderItems.append(newItem)
     }
     
     func getReminderSampleList() -> [ReminderItem] {
@@ -28,6 +39,7 @@ final class ReminderVM: ObservableObject {
             ReminderItem(title: "Pay electrocity", referenceDate: Date() - 76, term: .biMonthly, description: "eyedrop replacement", valid: false)
         ]
     }
+    
     func getReminderSample() -> ReminderItem {
         return ReminderItem(title: "Replace Brita Filter", referenceDate: Date() - 35, term: .monthly, description: "filter replacement")
     }
@@ -105,5 +117,45 @@ final class ReminderVM: ObservableObject {
         }
         
         return nextDate
+    }
+    
+    private func appendAndSave(_ item: ReminderItem) {
+        reminderItems.append(item)
+        saveReminderItems()
+    }
+    
+    private func saveReminderItems() {
+        do {
+            var encoded: [Data] = []
+            let encoder = JSONEncoder()
+            for item in reminderItems {
+                let data = try encoder.encode(item)
+                encoded.append(data)
+            }
+            defaults.set(encoded, forKey: "ReminderItems")
+        } catch {
+            print(error)
+        }
+    }
+    
+    private func getReminderItems() -> [ReminderItem] {
+        if !reminderItems.isEmpty {
+            return reminderItems
+        } else {
+            guard let data = defaults.object(forKey: "ReminderItems") as? [Data] else {
+                return []
+            }
+            do {
+                let decoder = JSONDecoder()
+                for item in data {
+                    let decodedData = try decoder.decode(ReminderItem.self, from: item)
+                    reminderItems.append(decodedData)
+                }
+                return reminderItems
+            } catch {
+                print(error)
+                return []
+            }
+        }
     }
 }

@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct ReminderItem: Hashable, Identifiable {
+struct ReminderItem: Hashable, Identifiable, Codable {
     var id: UUID
     var title: String
     var dDay: Int // if it's 5 it means nextAlertDate - 5 same with "D-5"
@@ -27,7 +27,7 @@ struct ReminderItem: Hashable, Identifiable {
         self.valid = true
         self.updateDate = Date()
         self.dDay = 0
-        self.nextAlertDate = updateDate - 1
+        self.nextAlertDate = Date()
     }
     //for test
     init(title: String, referenceDate: Date, term: Term, description: String, valid: Bool) {

@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct AddItemView: View {
+    @EnvironmentObject var vm: ReminderVM
+    @Binding var path: [NavPath]
     @State var title: String = ""
     @State var description: String = ""
     @State private var term: Term = .once
@@ -20,7 +22,9 @@ struct AddItemView: View {
             titleMissingAlertVisible = true
             return;
         }
-        print("submit")
+        vm.addNewItem(title: title, referenceDate: date, term: term, description: description)
+        
+        path.removeLast()
     }
     
     var body: some View {
@@ -74,5 +78,6 @@ struct AddItemView: View {
 }
 
 #Preview {
-    AddItemView()
+    AddItemView(path: .constant([]))
+        .environmentObject(ReminderVM())
 }
