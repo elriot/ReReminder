@@ -31,30 +31,118 @@ final class ReminderVM: ObservableObject {
         return ReminderItem(title: "Replace Brita Filter", referenceDate: Date() - 35, term: .monthly, description: "filter replacement")
     }
     
-    func updateItems () {
+    func updateItems() {
         let today = Date()
         let calendar = Calendar.current
-        
+
         for index in reminderItems.indices {
-            let item = reminderItems[index]
-            
-            
+            var item = reminderItems[index]
+
             if !calendar.isDate(item.updateDate, inSameDayAs: today) {
-                updateDDay(target: &reminderItems[index])
+                if item.nextAlertDate < today {
+                    updateNextAlertDate(for: &item)
+                }
+                
+                updateDDay(for: &item)
+                item.updateDate = Date()
             }
         }
     }
     
-    func updateDDay(target: inout ReminderItem) {
-        let today = Date()
-        let nextAlertDate = target.nextAlertDate
-        target.dDay = calculateDDay(from: nextAlertDate, today: today)
+    func updateDDay(for target: inout ReminderItem) {
+        target.dDay = calculateDDay(from: target.nextAlertDate, to: Date())
     }
     
-    func calculateDDay(from nextDate: Date, today: Date) -> Int {
+    func calculateDDay(from nextDate: Date, to today: Date) -> Int {
         let calendar = Calendar.current
         let components = calendar.dateComponents([.day], from: today, to: nextDate)
-        guard let days = components.day else { return 0 }
-        return days >= 0 ? days : 0
+        return components.day ?? 0
     }
+    
+    func updateNextAlertDate(for target: inout ReminderItem) {
+        target.nextAlertDate = calculateNextAlertDate(from: target.nextAlertDate, term: target.term)
+    }
+    
+    func calculateNextAlertDate(from date: Date, term: Term) -> Date {
+        let today = Date()
+        let calendar = Calendar.current
+        var nextDate = date
+        
+        switch term {
+        case .once:
+            return nextDate
+        case .weekly:
+            while nextDate < today {
+                nextDate = calendar.date(byAdding: .day, value: 7, to: nextDate) ?? date
+            }
+        case .biWeekly:
+            while nextDate < today {
+                nextDate = calendar.date(byAdding: .day, value: 14, to: nextDate) ?? date
+            }
+        case .monthly:
+            while nextDate < today {
+                nextDate = calendar.date(byAdding: .month, value: 1, to: nextDate) ?? date
+            }
+        case .biMonthly:
+            while nextDate < today {
+                nextDate = calendar.date(byAdding: .month, value: 2, to: nextDate) ?? date
+            }
+        case .everyFirstDay:
+            while nextDate < today {
+                if let nextMonth = calendar.date(byAdding: .month, value: 1, to: nextDate) {
+                    nextDate = calendar.date(from: calendar.dateComponents([.year, .month], from: nextMonth)) ?? nextMonth
+                }
+            }
+        case .everyLastDay:
+            while nextDate < today {
+                if let nextMonth = calendar.date(byAdding: .month, value: 1, to: nextDate),
+                   let lastDay = calendar.date(byAdding: .day, value: -1, to: calendar.date(from: calendar.dateComponents([.year, .month], from: nextMonth))!) {
+                    nextDate = lastDay
+                }
+            }
+        }
+        
+        return nextDate
+    }
+//    func calculateNextAlertDate(date: Date, term: Term) -> Date {
+//        let today = Date()
+//        let calendar = Calendar.current
+//        var nextDate = date
+//        
+//        switch term {
+//        case .once:
+//            return nextDate
+//        case .weekly:
+//            while nextDate < today {
+//                nextDate = calendar.date(byAdding: .day, value: 7, to: nextDate) ?? date
+//            }
+//        case .biWeekly:
+//            while nextDate < today {
+//                nextDate = calendar.date(byAdding: .day, value: 14, to: nextDate) ?? date
+//            }
+//        case .monthly:
+//            while nextDate < today {
+//                nextDate = calendar.date(byAdding: .month, value: 1, to: nextDate) ?? date
+//            }
+//        case .biMonthly:
+//            while nextDate < today {
+//                nextDate = calendar.date(byAdding: .month, value: 2, to: nextDate) ?? date
+//            }
+//        case .everyFirstDay:
+//            while nextDate < today {
+//                if let nextMonth = calendar.date(byAdding: .month, value: 1, to: nextDate) {
+//                    nextDate = calendar.date(from: calendar.dateComponents([.year, .month], from: nextMonth)) ?? nextMonth
+//                }
+//            }
+//        case .everyLastDay:
+//            while nextDate < today {
+//                if let nextMonth = calendar.date(byAdding: .month, value: 1, to: nextDate),
+//                   let lastDay = calendar.date(byAdding: .day, value: -1, to: calendar.date(from: calendar.dateComponents([.year, .month], from: nextMonth))!) {
+//                    nextDate = lastDay
+//                }
+//            }
+//        }
+//        
+//        return nextDate
+//    }
 }
