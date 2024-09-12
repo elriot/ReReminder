@@ -1,5 +1,5 @@
 //
-//  ReminderMainView.swift
+//  ReminderListView.swift
 //  ReReminder
 //
 //  Created by SOOPIN KIM on 2024-09-11.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct ReminderMainView: View {
+struct ReminderListView: View {
     @EnvironmentObject var vm: ReminderVM
     @Binding var items: [ReminderItem]
     @State var text: String = ""
@@ -21,12 +21,16 @@ struct ReminderMainView: View {
             SearchTextField(placeholder: "Search title..", action: submit, text: $text)
                 .padding()
             
-            ListView(items: $vm.reminderItems);
+            List ($items){ $item in
+                NavigationLink(value: NavPath.details(item)) {
+                    ListItemView(item: $item)
+                }
+            }
         }
     }
 }
 
 #Preview {
-    ReminderMainView(items: .constant([]))
+    ReminderListView(items: .constant(ReminderVM().getReminderSampleList()))
         .environmentObject(ReminderVM())
 }

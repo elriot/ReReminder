@@ -16,9 +16,7 @@ struct ItemDetailView: View {
             Text(item.description)
             Text("\(item)")
         }
-        .onAppear {
-            
-        }
+//        .navigationTitle("Detail")
     }
 }
 

@@ -19,7 +19,7 @@ struct HomeView: View {
     
     var body: some View {
         NavigationStack(path: $path){
-            ReminderMainView(items: $vm.reminderItems)
+            ReminderListView(items: $vm.reminderItems)
                 .navigationTitle("Home")
                 .toolbar {
                     addToolbarItems()
@@ -58,9 +58,9 @@ struct HomeView: View {
     func destinationView(for path: NavPath) -> some View {
         switch path {
         case .main:
-            ReminderMainView(items: $vm.reminderItems)
+            ReminderListView(items: $vm.reminderItems)
         case .setting:
-            ReminderMainView(items: $vm.reminderItems)
+            ReminderListView(items: $vm.reminderItems)
         case .add:
             AddItemView(path: $path)
         case .details(let item):
