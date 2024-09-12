@@ -10,12 +10,37 @@ import SwiftUI
 struct ItemDetailView: View {
     let item: ReminderItem
     @Binding var path: [NavPath]
+    @State var alertVisible: Bool = false
+    
     var body: some View {
         VStack {
             Text(item.title)
             Text(item.description)
             Text("\(item)")
         }
+        .navigationTitle("Detail")
+        .navigationBarTitleDisplayMode(.inline)
+        .toolbar {
+            ToolbarItem(placement: .navigationBarTrailing) {
+                Button {
+                    alertVisible = true
+                } label: {
+                    Image(systemName: "trash.fill")
+                        .foregroundColor(.toolBarButton)
+                }
+            }
+        }
+        .alert("Delete Reminder", isPresented: $alertVisible) {
+            Button("Delete") {
+                print("Deleted")
+            }
+            Button("Cancel", role: .cancel) {
+                print("Cancelled")
+            }
+        } message: {
+            Text("Are you sure you want to delete this reminder?")
+        }
+        
 //        .navigationTitle("Detail")
     }
 }
