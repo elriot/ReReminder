@@ -9,7 +9,6 @@ import SwiftUI
 
 struct SimpleTextField: View {
     let placeholder: String
-//    let action: () -> Void
     @Binding var text: String
     
     var body: some View {
@@ -35,5 +34,5 @@ struct SimpleTextField: View {
 }
 
 #Preview {
-    SimpleTextField(placeholder: "Enter title", action: {}, text: .constant(""))
+    SimpleTextField(placeholder: "Enter title", text: .constant(""))
 }

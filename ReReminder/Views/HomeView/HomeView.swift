@@ -59,7 +59,7 @@ struct HomeView: View {
         case .setting:
             ReminderMainView()
         case .add:
-            ReminderMainView()
+            AddItemView()
         case .details(let item):
             ReminderMainView()
         }

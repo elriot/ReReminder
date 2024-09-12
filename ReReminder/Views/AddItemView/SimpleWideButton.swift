@@ -8,11 +8,27 @@
 import SwiftUI
 
 struct SimpleWideButton: View {
+    let text: String
+    let action: () -> Void
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        ZStack {
+            RoundedRectangle(cornerRadius: 10)
+                .foregroundColor(.toolBarButton)
+            
+            Button {
+                action()
+            } label: {
+                Text(text)
+                    .font(.title2)
+                    .fontWeight(.medium)
+            }
+            .foregroundColor(.white)
+        }
+        .frame(height: 70)
     }
 }
 
 #Preview {
-    SimpleWideButton()
+    SimpleWideButton(text: "Add List", action: {})
 }

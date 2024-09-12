@@ -24,6 +24,10 @@
 		F6E0AE012C924B50005E6BCB /* SearchTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6E0AE002C924B4F005E6BCB /* SearchTextField.swift */; };
 		F6E0AE032C925036005E6BCB /* NavPath.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6E0AE022C925036005E6BCB /* NavPath.swift */; };
 		F6E0AE052C925239005E6BCB /* ReminderMainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6E0AE042C925239005E6BCB /* ReminderMainView.swift */; };
+		F6E0AE082C925D15005E6BCB /* AddItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6E0AE072C925D15005E6BCB /* AddItemView.swift */; };
+		F6E0AE0A2C925EB7005E6BCB /* SimpleTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6E0AE092C925EB7005E6BCB /* SimpleTextField.swift */; };
+		F6E0AE0C2C926162005E6BCB /* TermPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6E0AE0B2C926162005E6BCB /* TermPickerView.swift */; };
+		F6E0AE0E2C926551005E6BCB /* SimpleWideButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6E0AE0D2C926551005E6BCB /* SimpleWideButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -64,6 +68,10 @@
 		F6E0AE002C924B4F005E6BCB /* SearchTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTextField.swift; sourceTree = "<group>"; };
 		F6E0AE022C925036005E6BCB /* NavPath.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavPath.swift; sourceTree = "<group>"; };
 		F6E0AE042C925239005E6BCB /* ReminderMainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReminderMainView.swift; sourceTree = "<group>"; };
+		F6E0AE072C925D15005E6BCB /* AddItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddItemView.swift; sourceTree = "<group>"; };
+		F6E0AE092C925EB7005E6BCB /* SimpleTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleTextField.swift; sourceTree = "<group>"; };
+		F6E0AE0B2C926162005E6BCB /* TermPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TermPickerView.swift; sourceTree = "<group>"; };
+		F6E0AE0D2C926551005E6BCB /* SimpleWideButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleWideButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -172,6 +180,7 @@
 			isa = PBXGroup;
 			children = (
 				F6D87C892C90A1FD001C66BA /* HomeView */,
+				F6E0AE062C925CED005E6BCB /* AddItemView */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -195,6 +204,17 @@
 				F6E0AE002C924B4F005E6BCB /* SearchTextField.swift */,
 			);
 			path = HomeView;
+			sourceTree = "<group>";
+		};
+		F6E0AE062C925CED005E6BCB /* AddItemView */ = {
+			isa = PBXGroup;
+			children = (
+				F6E0AE072C925D15005E6BCB /* AddItemView.swift */,
+				F6E0AE092C925EB7005E6BCB /* SimpleTextField.swift */,
+				F6E0AE0B2C926162005E6BCB /* TermPickerView.swift */,
+				F6E0AE0D2C926551005E6BCB /* SimpleWideButton.swift */,
+			);
+			path = AddItemView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -327,10 +347,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F6E0AE0E2C926551005E6BCB /* SimpleWideButton.swift in Sources */,
 				F6E0AE032C925036005E6BCB /* NavPath.swift in Sources */,
 				F6D87C8F2C90B30B001C66BA /* ListView.swift in Sources */,
+				F6E0AE0C2C926162005E6BCB /* TermPickerView.swift in Sources */,
 				F6D87C922C90B598001C66BA /* ListItemView.swift in Sources */,
 				F6D87C8D2C90A21B001C66BA /* HomeView.swift in Sources */,
+				F6E0AE0A2C925EB7005E6BCB /* SimpleTextField.swift in Sources */,
+				F6E0AE082C925D15005E6BCB /* AddItemView.swift in Sources */,
 				F6D87C982C90CA10001C66BA /* Extensions.swift in Sources */,
 				F6E0AE012C924B50005E6BCB /* SearchTextField.swift in Sources */,
 				F6D87C5E2C900C8A001C66BA /* ContentView.swift in Sources */,
