@@ -9,6 +9,7 @@ import SwiftUI
 
 struct ItemDetailView: View {
     let item: ReminderItem
+    @EnvironmentObject var vm: ReminderVM
     @Binding var path: [NavPath]
     @State var alertVisible: Bool = false
     
@@ -32,7 +33,8 @@ struct ItemDetailView: View {
         }
         .alert("Delete Reminder", isPresented: $alertVisible) {
             Button("Delete") {
-                print("Deleted")
+                vm.delete(item)
+                path.removeLast()
             }
             Button("Cancel", role: .cancel) {
                 print("Cancelled")

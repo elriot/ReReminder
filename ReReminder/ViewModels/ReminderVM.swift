@@ -133,7 +133,7 @@ final class ReminderVM: ObservableObject {
                 encoded.append(data)
             }
             defaults.set(encoded, forKey: "ReminderItems")
-            print("defauls set reminderItems done")
+//            print("defauls set reminderItems done")
         } catch {
             print(error)
         }
@@ -153,11 +153,19 @@ final class ReminderVM: ObservableObject {
                     reminderItems.append(decodedData)
                 }
                 return reminderItems
-                print("defauls GET reminderItems done")
             } catch {
                 print(error)
                 return []
             }
+        }
+    }
+    
+    func delete(_ item: ReminderItem){
+        for i in 0..<reminderItems.count {
+            guard item == reminderItems[i] else { continue }
+            reminderItems.remove(at: i)
+            saveReminderItems()
+            return
         }
     }
 }
