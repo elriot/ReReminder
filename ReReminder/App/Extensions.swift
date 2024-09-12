@@ -21,3 +21,9 @@ extension Date {
     }
 
 }
+
+extension Int {
+    func dDayToString() -> String {
+        return self == 0 ? "D-Day" : "D-\(self)"
+    }
+}

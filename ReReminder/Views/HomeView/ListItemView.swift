@@ -10,8 +10,7 @@ import SwiftUI
 struct ListItemView: View {
     @EnvironmentObject var vm: ReminderVM
     @Binding var item: ReminderItem
-    
-//    @State var isValid = item.valid
+
     var body: some View {
         let bg: Color = item.valid ? .orange : .gray
         let fontColor: Color = item.valid ? .black : .gray
@@ -24,7 +23,7 @@ struct ListItemView: View {
                     .font(.caption)
                 
                 VStack {
-                    Text("\(item.dDay)")
+                    Text("\(item.dDay.dDayToString())")
                         .font(.caption)
                         .fontWeight(.semibold)
                         .foregroundColor(.white) // Text color
@@ -38,10 +37,19 @@ struct ListItemView: View {
                 }
                 .fontWeight(.semibold)
                 HStack {
-                    Text("Last : \(item.lastdate.formattedDate())")
+                    Text("Last : \(item.referenceDate.formattedDate())")
+                        .font(.caption)
+                }
+                HStack {
+                    Text("Next : \(item.nextAlertDate.formattedDate())")
+                        .font(.caption)
+                }
+                HStack {
+                    Text("term : \(item.term.rawValue)")
                         .font(.caption)
                 }
             }
+            
             .foregroundColor(fontColor)
             
             VStack(alignment: .trailing, content: {
@@ -55,7 +63,7 @@ struct ListItemView: View {
                 .padding()
             })
         }
-        .frame(height: 60)
+        .frame(height: 90)
         
     }
 }

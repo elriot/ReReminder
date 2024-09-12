@@ -9,7 +9,7 @@ import SwiftUI
 
 struct HomeView: View {
     @EnvironmentObject var vm: ReminderVM
-    @State var items: [ReminderItem] = []
+//    @State var items: [ReminderItem] = []
     @State var text: String = ""
     @State private var path: [NavPath] = []
     
@@ -29,6 +29,9 @@ struct HomeView: View {
                    destinationView(for: path)
                 }
         }
+    }
+    func printYo() {
+        print(vm.reminderItems)
     }
     
     @ToolbarContentBuilder
@@ -59,7 +62,7 @@ struct HomeView: View {
         case .setting:
             ReminderMainView()
         case .add:
-            ReminderMainView()
+            AddItemView(path: $path)
         case .details(let item):
             ReminderMainView()
         }
