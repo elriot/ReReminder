@@ -29,6 +29,8 @@
 		F6E0AE0E2C926551005E6BCB /* SimpleWideButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6E0AE0D2C926551005E6BCB /* SimpleWideButton.swift */; };
 		F6E0AE102C9269C1005E6BCB /* SimpleDatePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6E0AE0F2C9269C1005E6BCB /* SimpleDatePicker.swift */; };
 		F6E0AE132C9390F3005E6BCB /* ItemDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6E0AE122C9390F3005E6BCB /* ItemDetailView.swift */; };
+		F6E0AE152C94C56C005E6BCB /* ItemDetailLabelContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6E0AE142C94C56C005E6BCB /* ItemDetailLabelContentView.swift */; };
+		F6E0AE172C94C85A005E6BCB /* ItemDetailToggleButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6E0AE162C94C85A005E6BCB /* ItemDetailToggleButtonView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -74,6 +76,8 @@
 		F6E0AE0D2C926551005E6BCB /* SimpleWideButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleWideButton.swift; sourceTree = "<group>"; };
 		F6E0AE0F2C9269C1005E6BCB /* SimpleDatePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleDatePicker.swift; sourceTree = "<group>"; };
 		F6E0AE122C9390F3005E6BCB /* ItemDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemDetailView.swift; sourceTree = "<group>"; };
+		F6E0AE142C94C56C005E6BCB /* ItemDetailLabelContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemDetailLabelContentView.swift; sourceTree = "<group>"; };
+		F6E0AE162C94C85A005E6BCB /* ItemDetailToggleButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemDetailToggleButtonView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -224,6 +228,8 @@
 			isa = PBXGroup;
 			children = (
 				F6E0AE122C9390F3005E6BCB /* ItemDetailView.swift */,
+				F6E0AE142C94C56C005E6BCB /* ItemDetailLabelContentView.swift */,
+				F6E0AE162C94C85A005E6BCB /* ItemDetailToggleButtonView.swift */,
 			);
 			path = ItemDetailView;
 			sourceTree = "<group>";
@@ -372,7 +378,9 @@
 				F6E0AE132C9390F3005E6BCB /* ItemDetailView.swift in Sources */,
 				F6E0AE052C925239005E6BCB /* ReminderListView.swift in Sources */,
 				F6D87C9A2C90D95D001C66BA /* ReminderVM.swift in Sources */,
+				F6E0AE152C94C56C005E6BCB /* ItemDetailLabelContentView.swift in Sources */,
 				F6D87C962C90B7DE001C66BA /* Term.swift in Sources */,
+				F6E0AE172C94C85A005E6BCB /* ItemDetailToggleButtonView.swift in Sources */,
 				F6D87C942C90B715001C66BA /* ReminderItem.swift in Sources */,
 				F6D87C5C2C900C8A001C66BA /* ReReminderApp.swift in Sources */,
 			);
