@@ -13,25 +13,16 @@ struct ItemDetailView: View {
     @Binding var path: [NavPath]
     @State var alertVisible: Bool = false
     @State var isOn: Bool = false
+    
+    func updateValid() {
+        print("update valid")
+        vm.updateToggleItem(item)
+    }
 
     var body: some View {
-        var bgColor: Color = item.valid ? .clear : .gray
+        let bgColor: Color = item.valid ? .clear : .gray
         VStack(spacing: 25) {
-            HStack {
-                Text("Alarm")
-                    .font(.title)
-                    .fontWeight(.semibold)
-                Spacer()
-                
-                Toggle(isOn: $isOn){
-                    
-                }
-                .padding()
-                .onChange(of: isOn) {
-                    print("toggle tap")
-                }
-                
-            }
+            ItemDetailToggleButtonView(label: "Alarm", action: {}, isOn: $isOn)
             
             ItemDetailLabelContentView(label: "Title", content: item.title
             )
@@ -75,6 +66,9 @@ struct ItemDetailView: View {
             }
         } message: {
             Text("Are you sure you want to delete this reminder?")
+        }
+        .onAppear {
+            isOn = item.valid
         }
         
 //        .navigationTitle("Detail")

@@ -8,11 +8,33 @@
 import SwiftUI
 
 struct ItemDetailToggleButtonView: View {
+    let label: String
+    let action: () -> Void
+    @Binding var isOn: Bool
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        HStack {
+            Text(label)
+                .font(.title)
+                .fontWeight(.semibold)
+            Spacer()
+            
+            Toggle(isOn: $isOn) {
+                // Empty label for toggle
+            }
+            .padding()
+            .onChange(of: isOn) {
+                // This should trigger when `isOn` changes
+//                print("Toggle changed to: \(newVal)")
+                action()
+            }
+        }
+        .padding()
     }
 }
 
 #Preview {
-    ItemDetailToggleButtonView()
+    ItemDetailToggleButtonView(label: "Alarm", action: {
+        print("Action called")
+    }, isOn: .constant(true))
 }

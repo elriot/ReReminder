@@ -168,4 +168,16 @@ final class ReminderVM: ObservableObject {
             return
         }
     }
+    
+    func updateToggleItem(_ item: ReminderItem) {
+        for i in 0..<reminderItems.count {
+            if item == reminderItems[i] {
+                var updateItem = reminderItems[i]
+                updateItem.valid.toggle()
+                reminderItems[i] = updateItem
+                saveReminderItems()
+                break
+            }
+        }
+    }
 }
