@@ -9,7 +9,6 @@ import SwiftUI
 
 struct HomeView: View {
     @EnvironmentObject var vm: ReminderVM
-//    @State var items: [ReminderItem] = []
     @State var text: String = ""
     @State private var path: [NavPath] = []
     

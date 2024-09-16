@@ -9,9 +9,8 @@ import SwiftUI
 
 struct ReminderListView: View {
     @EnvironmentObject var vm: ReminderVM
-//    @Binding var items: [ReminderItem]
     @State var text: String = ""
-    @State var items: [ReminderItem] = []
+//    @State var items: [ReminderItem] =
     
     func submit() {
         print("search : \(text)")
@@ -22,7 +21,7 @@ struct ReminderListView: View {
             SearchTextField(placeholder: "Search title..", action: submit, text: $text)
                 .padding()
             
-            List ($items){ $item in
+            List ($vm.reminderItems){ $item in
                 NavigationLink(value: NavPath.details(item)) {
                     ListItemView(item: $item)
                 }
@@ -31,13 +30,13 @@ struct ReminderListView: View {
                 print(vm.reminderItems)
             }
         }
-        .onAppear {
-            items = vm.reminderItems
-        }
     }
 }
 
 #Preview {
-    ReminderListView()
-        .environmentObject(ReminderVM())
+    let sampleVM = ReminderVM()
+    sampleVM.reminderItems = sampleVM.reminderItems
+    
+    return ReminderListView()
+        .environmentObject(sampleVM)
 }

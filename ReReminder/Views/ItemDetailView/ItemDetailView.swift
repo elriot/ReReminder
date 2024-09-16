@@ -14,12 +14,16 @@ struct ItemDetailView: View {
     @State var alertVisible: Bool = false
     @State var isOn: Bool = false
     @State var bgColor: Color = .clear
+    @State var isUpdate: Bool = false
     
     func updateValid() {
         print("isOn.toggle", isOn)
-//        print("update valid, before: \(item.valid)")
-//        vm.updateToggleItem(item)
-//        print("update valid, after: \(item.valid)")
+        print("update valid, before: \(item.valid)")
+        isOn.toggle()
+        
+        vm.updateToggleItem(item)
+        print("update valid, after: \(item.valid)")
+        isUpdate.toggle()
     }
 
     var body: some View {
