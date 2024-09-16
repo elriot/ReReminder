@@ -13,16 +13,18 @@ struct ItemDetailView: View {
     @Binding var path: [NavPath]
     @State var alertVisible: Bool = false
     @State var isOn: Bool = false
+    @State var bgColor: Color = .clear
     
     func updateValid() {
-        print("update valid")
-        vm.updateToggleItem(item)
+        print("isOn.toggle", isOn)
+//        print("update valid, before: \(item.valid)")
+//        vm.updateToggleItem(item)
+//        print("update valid, after: \(item.valid)")
     }
 
     var body: some View {
-        let bgColor: Color = item.valid ? .clear : .gray
         VStack(spacing: 25) {
-            ItemDetailToggleButtonView(label: "Alarm", action: {}, isOn: $isOn)
+            ItemDetailToggleButtonView(label: "Alarm", action: updateValid, isOn: $isOn)
             
             ItemDetailLabelContentView(label: "Title", content: item.title
             )
@@ -31,8 +33,11 @@ struct ItemDetailView: View {
             )
             Text(item.description)
             Text("\(item)")
-            
+            Text("Valid \(item.valid)")
             Spacer()
+            Button("Label") {
+                print(vm.reminderItems)
+            }
         }
         .padding()
         .background(bgColor)
@@ -69,6 +74,7 @@ struct ItemDetailView: View {
         }
         .onAppear {
             isOn = item.valid
+            bgColor = item.valid ? .clear : .gray
         }
         
 //        .navigationTitle("Detail")
@@ -77,4 +83,5 @@ struct ItemDetailView: View {
 
 #Preview {
     ItemDetailView(item: ReminderVM().getReminderSample(), path: .constant([]))
+        .environmentObject(ReminderVM())
 }

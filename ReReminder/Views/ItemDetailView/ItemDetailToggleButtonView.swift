@@ -23,9 +23,8 @@ struct ItemDetailToggleButtonView: View {
                 // Empty label for toggle
             }
             .padding()
-            .onChange(of: isOn) {
-                // This should trigger when `isOn` changes
-//                print("Toggle changed to: \(newVal)")
+            .onChange(of: isOn) { 
+                print("toggle button")
                 action()
             }
         }

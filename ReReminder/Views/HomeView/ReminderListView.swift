@@ -9,8 +9,9 @@ import SwiftUI
 
 struct ReminderListView: View {
     @EnvironmentObject var vm: ReminderVM
-    @Binding var items: [ReminderItem]
+//    @Binding var items: [ReminderItem]
     @State var text: String = ""
+    @State var items: [ReminderItem] = []
     
     func submit() {
         print("search : \(text)")
@@ -26,11 +27,17 @@ struct ReminderListView: View {
                     ListItemView(item: $item)
                 }
             }
+            Button("Label") {
+                print(vm.reminderItems)
+            }
+        }
+        .onAppear {
+            items = vm.reminderItems
         }
     }
 }
 
 #Preview {
-    ReminderListView(items: .constant(ReminderVM().getReminderSampleList()))
+    ReminderListView()
         .environmentObject(ReminderVM())
 }

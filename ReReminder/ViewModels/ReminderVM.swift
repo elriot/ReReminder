@@ -46,7 +46,7 @@ final class ReminderVM: ObservableObject {
     
     func updateItems() {
         let today = Date()
-        let calendar = Calendar.current
+//        let calendar = Calendar.current
         
         for index in reminderItems.indices {
             var item = reminderItems[index]
@@ -171,11 +171,10 @@ final class ReminderVM: ObservableObject {
     
     func updateToggleItem(_ item: ReminderItem) {
         for i in 0..<reminderItems.count {
-            if item == reminderItems[i] {
-                var updateItem = reminderItems[i]
-                updateItem.valid.toggle()
-                reminderItems[i] = updateItem
+            if item.id == reminderItems[i].id { 
+                reminderItems[i].valid.toggle()
                 saveReminderItems()
+                 print("updated! \(reminderItems[i].valid)")
                 break
             }
         }
