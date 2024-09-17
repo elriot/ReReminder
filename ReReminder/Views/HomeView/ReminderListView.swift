@@ -22,9 +22,9 @@ struct ReminderListView: View {
                 .padding()
             
             List ($vm.reminderItems){ $item in
-                NavigationLink(value: NavPath.details(item)) {
+//                NavigationLink(value: NavPath.details(item)) {
                     ListItemView(item: $item)
-                }
+//                }
             }
             Button("Label") {
                 print(vm.reminderItems)

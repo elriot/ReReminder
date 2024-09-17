@@ -10,7 +10,10 @@ import SwiftUI
 struct ListItemView: View {
     @EnvironmentObject var vm: ReminderVM
     @Binding var item: ReminderItem
-
+    
+    func updateValid() {
+        vm.updateToggleItem(item)
+    }
     var body: some View {
         let bg: Color = item.valid ? .orange : .gray
         let fontColor: Color = item.valid ? .black : .gray
@@ -49,8 +52,11 @@ struct ListItemView: View {
                         .font(.caption)
                 }
             }
-            
             .foregroundColor(fontColor)
+            
+            Button("test") {
+                updateValid()
+            }
             
 //            VStack(alignment: .trailing, content: {
 //                Toggle(isOn: $item.valid) {
