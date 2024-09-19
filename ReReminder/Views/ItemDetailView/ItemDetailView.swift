@@ -73,9 +73,11 @@ struct ItemDetailView: View {
         }
         .onAppear {
             isOn = item.valid
-            bgColor = item.valid ? .clear : .gray
+            bgColor = isOn ? .clear : .gray
         }
-        
+        .onChange(of: isOn) { prevVal, newVal in
+            bgColor = isOn ? .clear : .gray
+        }
 //        .navigationTitle("Detail")
     }
 }

@@ -22,7 +22,7 @@ struct ItemDetailToggleButtonView: View {
             Toggle(isOn: $isOn) {}
             .padding()
             .onChange(of: isOn) { 
-                print("toggle button")
+//                print("toggle button")
                 action()
             }
         }
