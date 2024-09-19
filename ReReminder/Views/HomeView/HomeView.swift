@@ -68,6 +68,12 @@ struct HomeView: View {
             } else {
                 Text("Item not found")
             }
+        case .edit(let item):
+            if let index = vm.reminderItems.firstIndex(where: { $0.id == item.id }) {
+                EditItemView(path: $path, item: $vm.reminderItems[index])
+            } else {
+                Text("Item not found")
+            }
         }
     }
 }
