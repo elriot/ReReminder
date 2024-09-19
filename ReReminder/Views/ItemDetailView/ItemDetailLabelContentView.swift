@@ -14,7 +14,7 @@ struct ItemDetailLabelContentView: View {
     var body: some View {
         VStack(alignment: .leading, spacing: 5) {
             Text(label)
-                .font(.title)
+                .font(.subheadline)
                 .fontWeight(.semibold)
             
             ZStack {
@@ -24,7 +24,7 @@ struct ItemDetailLabelContentView: View {
                 
                 HStack {
                     Text(content)
-                        .font(.title3)
+//                        .font()
                     Spacer()
                 }
                 .padding()

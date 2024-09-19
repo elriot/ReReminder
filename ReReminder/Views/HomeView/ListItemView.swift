@@ -54,9 +54,9 @@ struct ListItemView: View {
             }
             .foregroundColor(fontColor)
             
-            Button("test") {
-                updateValid()
-            }
+//            Button("test") {
+//                updateValid()
+//            }
             
 //            VStack(alignment: .trailing, content: {
 //                Toggle(isOn: $item.valid) {

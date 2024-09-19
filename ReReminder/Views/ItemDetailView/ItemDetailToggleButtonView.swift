@@ -15,7 +15,7 @@ struct ItemDetailToggleButtonView: View {
     var body: some View {
         HStack {
             Text(label)
-                .font(.title)
+                .font(.subheadline)
                 .fontWeight(.semibold)
             Spacer()
             
@@ -26,7 +26,6 @@ struct ItemDetailToggleButtonView: View {
                 action()
             }
         }
-        .padding()
     }
 }
 
