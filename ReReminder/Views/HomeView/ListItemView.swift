@@ -10,12 +10,15 @@ import SwiftUI
 struct ListItemView: View {
     @EnvironmentObject var vm: ReminderVM
     @Binding var item: ReminderItem
-
+    
+    func updateValid() {
+        vm.updateToggleItem(item, !item.valid)
+    }
     var body: some View {
         let bg: Color = item.valid ? .orange : .gray
         let fontColor: Color = item.valid ? .black : .gray
         
-        HStack(spacing: 10) {
+        HStack(spacing: 20) {
             ZStack {
                 RoundedRectangle(cornerRadius: 10)
                     .fill(bg)
@@ -49,19 +52,22 @@ struct ListItemView: View {
                         .font(.caption)
                 }
             }
-            
             .foregroundColor(fontColor)
             
-            VStack(alignment: .trailing, content: {
-                Toggle(isOn: $item.valid) {
-                    Text("")
-                }
-                .onChange(of: item.valid) {
-                    vm.toggleValid(item: &item)
-                }
-                .labelsHidden()
-                .padding()
-            })
+//            Button("test") {
+//                updateValid()
+//            }
+            
+//            VStack(alignment: .trailing, content: {
+//                Toggle(isOn: $item.valid) {
+//                    Text("")
+//                }
+//                .onChange(of: item.valid) {
+//                    vm.toggleValid(item: &item)
+//                }
+//                .labelsHidden()
+//                .padding()
+//            })
         }
         .frame(height: 90)
         

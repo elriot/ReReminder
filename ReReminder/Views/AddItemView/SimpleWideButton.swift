@@ -20,12 +20,12 @@ struct SimpleWideButton: View {
                 action()
             } label: {
                 Text(text)
-                    .font(.title2)
-                    .fontWeight(.medium)
+                    .font(.title3)
+                    .fontWeight(.semibold)
             }
             .foregroundColor(.white)
         }
-        .frame(height: 70)
+        .frame(height: 60)
     }
 }
 

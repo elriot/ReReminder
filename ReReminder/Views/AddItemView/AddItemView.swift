@@ -64,7 +64,9 @@ struct AddItemView: View {
             
             Spacer()
             
-            SimpleWideButton(text: "Add List", action: submit)
+            SimpleWideButton(text: "Add List") {
+                submit()
+            }
 
         }
         .frame(maxWidth: .infinity, alignment: .leading)

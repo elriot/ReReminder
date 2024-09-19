@@ -15,7 +15,6 @@
 		F6D87C772C900C8B001C66BA /* ReReminderUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6D87C762C900C8B001C66BA /* ReReminderUITests.swift */; };
 		F6D87C792C900C8B001C66BA /* ReReminderUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6D87C782C900C8B001C66BA /* ReReminderUITestsLaunchTests.swift */; };
 		F6D87C8D2C90A21B001C66BA /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6D87C8C2C90A21B001C66BA /* HomeView.swift */; };
-		F6D87C8F2C90B30B001C66BA /* ListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6D87C8E2C90B30B001C66BA /* ListView.swift */; };
 		F6D87C922C90B598001C66BA /* ListItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6D87C912C90B598001C66BA /* ListItemView.swift */; };
 		F6D87C942C90B715001C66BA /* ReminderItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6D87C932C90B715001C66BA /* ReminderItem.swift */; };
 		F6D87C962C90B7DE001C66BA /* Term.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6D87C952C90B7DE001C66BA /* Term.swift */; };
@@ -23,12 +22,15 @@
 		F6D87C9A2C90D95D001C66BA /* ReminderVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6D87C992C90D95D001C66BA /* ReminderVM.swift */; };
 		F6E0AE012C924B50005E6BCB /* SearchTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6E0AE002C924B4F005E6BCB /* SearchTextField.swift */; };
 		F6E0AE032C925036005E6BCB /* NavPath.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6E0AE022C925036005E6BCB /* NavPath.swift */; };
-		F6E0AE052C925239005E6BCB /* ReminderMainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6E0AE042C925239005E6BCB /* ReminderMainView.swift */; };
+		F6E0AE052C925239005E6BCB /* ReminderListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6E0AE042C925239005E6BCB /* ReminderListView.swift */; };
 		F6E0AE082C925D15005E6BCB /* AddItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6E0AE072C925D15005E6BCB /* AddItemView.swift */; };
 		F6E0AE0A2C925EB7005E6BCB /* SimpleTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6E0AE092C925EB7005E6BCB /* SimpleTextField.swift */; };
 		F6E0AE0C2C926162005E6BCB /* TermPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6E0AE0B2C926162005E6BCB /* TermPickerView.swift */; };
 		F6E0AE0E2C926551005E6BCB /* SimpleWideButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6E0AE0D2C926551005E6BCB /* SimpleWideButton.swift */; };
 		F6E0AE102C9269C1005E6BCB /* SimpleDatePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6E0AE0F2C9269C1005E6BCB /* SimpleDatePicker.swift */; };
+		F6E0AE132C9390F3005E6BCB /* ItemDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6E0AE122C9390F3005E6BCB /* ItemDetailView.swift */; };
+		F6E0AE152C94C56C005E6BCB /* ItemDetailLabelContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6E0AE142C94C56C005E6BCB /* ItemDetailLabelContentView.swift */; };
+		F6E0AE172C94C85A005E6BCB /* ItemDetailToggleButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6E0AE162C94C85A005E6BCB /* ItemDetailToggleButtonView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -60,7 +62,6 @@
 		F6D87C762C900C8B001C66BA /* ReReminderUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReReminderUITests.swift; sourceTree = "<group>"; };
 		F6D87C782C900C8B001C66BA /* ReReminderUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReReminderUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		F6D87C8C2C90A21B001C66BA /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
-		F6D87C8E2C90B30B001C66BA /* ListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListView.swift; sourceTree = "<group>"; };
 		F6D87C912C90B598001C66BA /* ListItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListItemView.swift; sourceTree = "<group>"; };
 		F6D87C932C90B715001C66BA /* ReminderItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReminderItem.swift; sourceTree = "<group>"; };
 		F6D87C952C90B7DE001C66BA /* Term.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Term.swift; sourceTree = "<group>"; };
@@ -68,12 +69,15 @@
 		F6D87C992C90D95D001C66BA /* ReminderVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReminderVM.swift; sourceTree = "<group>"; };
 		F6E0AE002C924B4F005E6BCB /* SearchTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTextField.swift; sourceTree = "<group>"; };
 		F6E0AE022C925036005E6BCB /* NavPath.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavPath.swift; sourceTree = "<group>"; };
-		F6E0AE042C925239005E6BCB /* ReminderMainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReminderMainView.swift; sourceTree = "<group>"; };
+		F6E0AE042C925239005E6BCB /* ReminderListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReminderListView.swift; sourceTree = "<group>"; };
 		F6E0AE072C925D15005E6BCB /* AddItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddItemView.swift; sourceTree = "<group>"; };
 		F6E0AE092C925EB7005E6BCB /* SimpleTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleTextField.swift; sourceTree = "<group>"; };
 		F6E0AE0B2C926162005E6BCB /* TermPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TermPickerView.swift; sourceTree = "<group>"; };
 		F6E0AE0D2C926551005E6BCB /* SimpleWideButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleWideButton.swift; sourceTree = "<group>"; };
 		F6E0AE0F2C9269C1005E6BCB /* SimpleDatePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleDatePicker.swift; sourceTree = "<group>"; };
+		F6E0AE122C9390F3005E6BCB /* ItemDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemDetailView.swift; sourceTree = "<group>"; };
+		F6E0AE142C94C56C005E6BCB /* ItemDetailLabelContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemDetailLabelContentView.swift; sourceTree = "<group>"; };
+		F6E0AE162C94C85A005E6BCB /* ItemDetailToggleButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemDetailToggleButtonView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -183,6 +187,7 @@
 			children = (
 				F6D87C892C90A1FD001C66BA /* HomeView */,
 				F6E0AE062C925CED005E6BCB /* AddItemView */,
+				F6E0AE112C938F77005E6BCB /* ItemDetailView */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -200,8 +205,7 @@
 			isa = PBXGroup;
 			children = (
 				F6D87C8C2C90A21B001C66BA /* HomeView.swift */,
-				F6E0AE042C925239005E6BCB /* ReminderMainView.swift */,
-				F6D87C8E2C90B30B001C66BA /* ListView.swift */,
+				F6E0AE042C925239005E6BCB /* ReminderListView.swift */,
 				F6D87C912C90B598001C66BA /* ListItemView.swift */,
 				F6E0AE002C924B4F005E6BCB /* SearchTextField.swift */,
 			);
@@ -218,6 +222,16 @@
 				F6E0AE0F2C9269C1005E6BCB /* SimpleDatePicker.swift */,
 			);
 			path = AddItemView;
+			sourceTree = "<group>";
+		};
+		F6E0AE112C938F77005E6BCB /* ItemDetailView */ = {
+			isa = PBXGroup;
+			children = (
+				F6E0AE122C9390F3005E6BCB /* ItemDetailView.swift */,
+				F6E0AE142C94C56C005E6BCB /* ItemDetailLabelContentView.swift */,
+				F6E0AE162C94C85A005E6BCB /* ItemDetailToggleButtonView.swift */,
+			);
+			path = ItemDetailView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -284,7 +298,7 @@
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1540;
-				LastUpgradeCheck = 1540;
+				LastUpgradeCheck = 1600;
 				TargetAttributes = {
 					F6D87C572C900C8A001C66BA = {
 						CreatedOnToolsVersion = 15.4;
@@ -352,7 +366,6 @@
 			files = (
 				F6E0AE0E2C926551005E6BCB /* SimpleWideButton.swift in Sources */,
 				F6E0AE032C925036005E6BCB /* NavPath.swift in Sources */,
-				F6D87C8F2C90B30B001C66BA /* ListView.swift in Sources */,
 				F6E0AE0C2C926162005E6BCB /* TermPickerView.swift in Sources */,
 				F6D87C922C90B598001C66BA /* ListItemView.swift in Sources */,
 				F6E0AE102C9269C1005E6BCB /* SimpleDatePicker.swift in Sources */,
@@ -362,9 +375,12 @@
 				F6D87C982C90CA10001C66BA /* Extensions.swift in Sources */,
 				F6E0AE012C924B50005E6BCB /* SearchTextField.swift in Sources */,
 				F6D87C5E2C900C8A001C66BA /* ContentView.swift in Sources */,
-				F6E0AE052C925239005E6BCB /* ReminderMainView.swift in Sources */,
+				F6E0AE132C9390F3005E6BCB /* ItemDetailView.swift in Sources */,
+				F6E0AE052C925239005E6BCB /* ReminderListView.swift in Sources */,
 				F6D87C9A2C90D95D001C66BA /* ReminderVM.swift in Sources */,
+				F6E0AE152C94C56C005E6BCB /* ItemDetailLabelContentView.swift in Sources */,
 				F6D87C962C90B7DE001C66BA /* Term.swift in Sources */,
+				F6E0AE172C94C85A005E6BCB /* ItemDetailToggleButtonView.swift in Sources */,
 				F6D87C942C90B715001C66BA /* ReminderItem.swift in Sources */,
 				F6D87C5C2C900C8A001C66BA /* ReReminderApp.swift in Sources */,
 			);
@@ -538,6 +554,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -567,6 +584,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -583,7 +601,6 @@
 		F6D87C802C900C8B001C66BA /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
@@ -603,7 +620,6 @@
 		F6D87C812C900C8B001C66BA /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
@@ -623,7 +639,6 @@
 		F6D87C832C900C8B001C66BA /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 47V2Q8N9K4;
@@ -641,7 +656,6 @@
 		F6D87C842C900C8B001C66BA /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 47V2Q8N9K4;

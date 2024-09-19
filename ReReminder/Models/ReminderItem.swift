@@ -18,6 +18,10 @@ struct ReminderItem: Hashable, Identifiable, Codable {
     var valid: Bool
     var updateDate: Date
     
+    static func == (lhs: ReminderItem, rhs: ReminderItem) -> Bool {
+        return lhs.id == rhs.id
+    }
+    
     init(title: String, referenceDate: Date, term: Term, description: String) {
         self.id = UUID()
         self.title = title

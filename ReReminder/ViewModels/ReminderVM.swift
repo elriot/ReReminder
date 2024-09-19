@@ -12,9 +12,7 @@ final class ReminderVM: ObservableObject {
     @Published var reminderItems: [ReminderItem] = []
     private let defaults = UserDefaults.standard
     
-    init(){
-//        reminderItems = getReminderSampleList()
-//        updateItems()
+    init() {
         self.reminderItems = getReminderItems()
         print("Init: reminderItem \(reminderItems)")
     }
@@ -46,7 +44,7 @@ final class ReminderVM: ObservableObject {
     
     func updateItems() {
         let today = Date()
-        let calendar = Calendar.current
+//        let calendar = Calendar.current
         
         for index in reminderItems.indices {
             var item = reminderItems[index]
@@ -133,31 +131,55 @@ final class ReminderVM: ObservableObject {
                 encoded.append(data)
             }
             defaults.set(encoded, forKey: "ReminderItems")
-            print("defauls set reminderItems done")
+//            print("defauls set reminderItems done")
         } catch {
             print(error)
         }
     }
     
     private func getReminderItems() -> [ReminderItem] {
-        if !reminderItems.isEmpty {
-            return reminderItems
-        } else {
-            guard let data = defaults.object(forKey: "ReminderItems") as? [Data] else {
-                return []
+        guard let data = defaults.object(forKey: "ReminderItems") as? [Data] else {
+            return []
+        }
+        do {
+            let decoder = JSONDecoder()
+            var items: [ReminderItem] = []
+            for item in data {
+                let decodedData = try decoder.decode(ReminderItem.self, from: item)
+                items.append(decodedData)
             }
-            do {
-                let decoder = JSONDecoder()
-                for item in data {
-                    let decodedData = try decoder.decode(ReminderItem.self, from: item)
-                    reminderItems.append(decodedData)
-                }
-                return reminderItems
-                print("defauls GET reminderItems done")
-            } catch {
-                print(error)
-                return []
+            return items
+        } catch {
+            print("Decoding error: \(error)")
+            return []
+        }
+    }
+    
+    func delete(_ item: ReminderItem){
+        for i in 0..<reminderItems.count {
+            guard item == reminderItems[i] else { continue }
+            reminderItems.remove(at: i)
+            saveReminderItems()
+            return
+        }
+    }
+    
+    func updateToggleItem(_ item: ReminderItem, _ isValid: Bool) {
+        for i in 0..<reminderItems.count {
+            if item.id == reminderItems[i].id {
+                var item = reminderItems[i]
+                item.valid = isValid
+                reminderItems[i] = item
+                saveReminderItems()
+                print("updated to (from vm:) ! \(reminderItems[i].valid)")
+                break
             }
         }
+    }
+    
+    func refreshItems(){
+        let items = self.reminderItems
+        self.reminderItems = []
+        self.reminderItems = items
     }
 }

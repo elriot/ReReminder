@@ -9,7 +9,6 @@ import SwiftUI
 
 struct HomeView: View {
     @EnvironmentObject var vm: ReminderVM
-//    @State var items: [ReminderItem] = []
     @State var text: String = ""
     @State private var path: [NavPath] = []
     
@@ -19,14 +18,14 @@ struct HomeView: View {
     
     var body: some View {
         NavigationStack(path: $path){
-            ReminderMainView()
+            ReminderListView()
                 .navigationTitle("Home")
                 .toolbar {
                     addToolbarItems()
                 }
                 .navigationBarTitleDisplayMode(.inline)
                 .navigationDestination(for: NavPath.self) { path in
-                   destinationView(for: path)
+                    destinationView(for: path)
                 }
         }
     }
@@ -58,13 +57,17 @@ struct HomeView: View {
     func destinationView(for path: NavPath) -> some View {
         switch path {
         case .main:
-            ReminderMainView()
+            ReminderListView()
         case .setting:
-            ReminderMainView()
+            ReminderListView()
         case .add:
             AddItemView(path: $path)
         case .details(let item):
-            ReminderMainView()
+            if let index = vm.reminderItems.firstIndex(where: { $0.id == item.id }) {
+                ItemDetailView(path: $path, item: $vm.reminderItems[index])
+            } else {
+                Text("Item not found")
+            }
         }
     }
 }
