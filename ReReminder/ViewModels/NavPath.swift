@@ -12,4 +12,5 @@ enum NavPath: Hashable {
     case setting
     case add
     case details(ReminderItem)
+    case edit(ReminderItem)
 }

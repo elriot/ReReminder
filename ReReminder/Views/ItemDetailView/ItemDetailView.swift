@@ -41,7 +41,7 @@ struct ItemDetailView: View {
                 Spacer()
                 
                 SimpleWideButton(text: "Edit") {
-                    print("Connect to detail view")
+                    path.append(.edit(item))
                 }
                 
 //                ZStack {
