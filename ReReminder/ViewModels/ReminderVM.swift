@@ -164,14 +164,22 @@ final class ReminderVM: ObservableObject {
         }
     }
     
-    func updateToggleItem(_ item: ReminderItem) {
+    func updateToggleItem(_ item: ReminderItem, _ isValid: Bool) {
         for i in 0..<reminderItems.count {
-            if item.id == reminderItems[i].id { 
-                reminderItems[i].valid.toggle()
+            if item.id == reminderItems[i].id {
+                var item = reminderItems[i]
+                item.valid = isValid
+                reminderItems[i] = item
                 saveReminderItems()
-                 print("updated to (from vm:) ! \(reminderItems[i].valid)")
+                print("updated to (from vm:) ! \(reminderItems[i].valid)")
                 break
             }
         }
+    }
+    
+    func refreshItems(){
+        let items = self.reminderItems
+        self.reminderItems = []
+        self.reminderItems = items
     }
 }

@@ -8,22 +8,16 @@
 import SwiftUI
 
 struct ItemDetailView: View {
-    let item: ReminderItem
     @EnvironmentObject var vm: ReminderVM
     @Binding var path: [NavPath]
+    @Binding var item: ReminderItem
     @State var alertVisible: Bool = false
     @State var isOn: Bool = false
     @State var bgColor: Color = .clear
-    @State var isUpdate: Bool = false
     
     func updateValid() {
-        print("isOn.toggle", isOn)
-        print("update valid, before: \(item.valid)")
-        isOn.toggle()
-        
-        vm.updateToggleItem(item)
-        print("update valid, after: \(item.valid)")
-        isUpdate.toggle()
+        print("isOn Changed: \(isOn)")
+        vm.updateToggleItem(item, isOn)
     }
 
     var body: some View {
@@ -41,6 +35,7 @@ struct ItemDetailView: View {
             Spacer()
             Button("Label") {
                 print(vm.reminderItems)
+                dump("item : \(item)")
             }
         }
         .padding()
@@ -86,6 +81,6 @@ struct ItemDetailView: View {
 }
 
 #Preview {
-    ItemDetailView(item: ReminderVM().getReminderSample(), path: .constant([]))
+    ItemDetailView(path: .constant([]), item: .constant(ReminderVM().getReminderSample()))
         .environmentObject(ReminderVM())
 }

@@ -63,7 +63,11 @@ struct HomeView: View {
         case .add:
             AddItemView(path: $path)
         case .details(let item):
-            ItemDetailView(item: item, path: $path)
+            if let index = vm.reminderItems.firstIndex(where: { $0.id == item.id }) {
+                ItemDetailView(path: $path, item: $vm.reminderItems[index])
+            } else {
+                Text("Item not found")
+            }
         }
     }
 }

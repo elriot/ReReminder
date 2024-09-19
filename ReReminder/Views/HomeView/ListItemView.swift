@@ -12,7 +12,7 @@ struct ListItemView: View {
     @Binding var item: ReminderItem
     
     func updateValid() {
-        vm.updateToggleItem(item)
+        vm.updateToggleItem(item, !item.valid)
     }
     var body: some View {
         let bg: Color = item.valid ? .orange : .gray

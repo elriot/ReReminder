@@ -19,9 +19,7 @@ struct ItemDetailToggleButtonView: View {
                 .fontWeight(.semibold)
             Spacer()
             
-            Toggle(isOn: $isOn) {
-                // Empty label for toggle
-            }
+            Toggle(isOn: $isOn) {}
             .padding()
             .onChange(of: isOn) { 
                 print("toggle button")
